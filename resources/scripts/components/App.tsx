@@ -1,6 +1,3 @@
-import { CoreThemeProvider } from './core-theme/CoreThemeContext';
-import CoreThemeEditor from './core-theme/CoreThemeEditor';
-import './core-theme/CoreThemeCSS.css';
 import React, { lazy } from 'react';
 import { hot } from 'react-hot-loader/root';
 import { Route, Router, Switch } from 'react-router-dom';
@@ -17,7 +14,9 @@ import AuthenticatedRoute from '@/components/elements/AuthenticatedRoute';
 import { ServerContext } from '@/state/server';
 import '@/assets/tailwind.css';
 import Spinner from '@/components/elements/Spinner';
-
+import { CoreThemeProvider } from './core-theme/CoreThemeContext';
+import CoreThemeEditor from './core-theme/CoreThemeEditor';
+import './core-theme/CoreThemeCSS.css';
 const DashboardRouter = lazy(() => import(/* webpackChunkName: "dashboard" */ '@/routers/DashboardRouter'));
 const ServerRouter = lazy(() => import(/* webpackChunkName: "server" */ '@/routers/ServerRouter'));
 const AuthenticationRouter = lazy(() => import(/* webpackChunkName: "auth" */ '@/routers/AuthenticationRouter'));
@@ -60,7 +59,7 @@ const App = () => {
     }
 
     return (
-        <>
+        <CoreThemeProvider>
             <GlobalStylesheet />
             <StoreProvider store={store}>
                 <ProgressBar />
@@ -91,7 +90,8 @@ const App = () => {
                     </Router>
                 </div>
             </StoreProvider>
-        </>
+        <CoreThemeEditor />
+</CoreThemeProvider>
     );
 };
 
