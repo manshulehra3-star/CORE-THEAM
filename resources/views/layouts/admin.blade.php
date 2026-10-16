@@ -34,7 +34,9 @@
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
             <![endif]-->
         @show
+        <link rel="stylesheet" href="/assets/core-admin.css">
     </head>
+    <script src="/assets/core-admin.js"></script>
     <body class="hold-transition skin-blue fixed sidebar-mini">
         <div class="wrapper">
             <header class="main-header">
