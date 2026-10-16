@@ -1,3 +1,4 @@
+import AnnouncementBanner from '@/components/core-theme/AnnouncementBanner';
 import React, { useEffect, useState } from 'react';
 import { Server } from '@/api/server/getServer';
 import getServers from '@/api/getServers';
