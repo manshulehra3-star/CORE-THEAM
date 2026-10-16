@@ -1,3 +1,6 @@
+import { CoreThemeProvider } from './core-theme/CoreThemeContext';
+import CoreThemeEditor from './core-theme/CoreThemeEditor';
+import './core-theme/CoreThemeCSS.css';
 import React, { lazy } from 'react';
 import { hot } from 'react-hot-loader/root';
 import { Route, Router, Switch } from 'react-router-dom';
